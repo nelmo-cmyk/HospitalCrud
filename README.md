@@ -130,7 +130,7 @@ Update-Database
 ## Clone o projeto
 
 ```bash
-git clone https://github.com/SEU-USUARIO/HospitalCrud.git
+git clone https://github.com/nelmo-cmyk/HospitalCrud.git
 ```
 
 ---
