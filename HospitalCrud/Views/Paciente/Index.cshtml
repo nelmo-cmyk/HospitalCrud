@@ -1,0 +1,65 @@
+﻿@model IEnumerable<HospitalCrud.Models.Paciente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Lista de Pacientes</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Criar Novo </a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+               NOME
+            </th>
+            <th>
+                E-MAIL
+            </th>
+            <th>
+                TELEFONE
+            </th>
+            <th>
+                CPF
+            </th>
+            <th>
+                SEXO
+            </th>
+            <th>
+                IDADE
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idade)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.idPaciente">Atualizar</a> 
+                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.idPaciente">Informações</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idPaciente">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
